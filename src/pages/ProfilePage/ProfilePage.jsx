@@ -5,6 +5,7 @@ import DefaultIcon from "../../images/icons/default_icon.png";
 
 export default function ProfilePage() {
   const [userData, setUserData] = useState({});
+  const [image, setImage] = useState();
   const navigate = useNavigate();
   const location = useLocation();
   const userId = location.state;
@@ -34,28 +35,56 @@ export default function ProfilePage() {
     navigate("/");
   };
 
+  const handleImageChange = (e) => {
+    const newImage = e.target.files[0];
+    if (newImage) {
+      setImage(URL.createObjectURL(newImage));
+    };
+  };
+
   const handleDeleteAccount = async () => {
-    const result = await fetch(`http://localhost:3005/userData/${userData.id}`,{
-      method: "DELETE",
-      headers: {
-        "Content-Type":"application/json",
-      },
-    })
+    const result = await fetch(
+      `http://localhost:3005/userData/${userData.id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     navigate("/");
-  }
+  };
 
   return (
     <div className="ProfileContainer">
       <div className="UserInfoWrapper">
-        <img src={DefaultIcon} alt="User Photo" />
-        <p className="userName">{userData.firstName}{" "}{userData.lastName}</p>
-        <p>Email: <span>{userData.email}</span></p>
-        <p>Age: <span>{userData.age}</span></p>
-        <p>Gender: <span>{userData.gender}</span></p>
+        <img src={image ? image : DefaultIcon} alt="User Photo" />
+        <form>
+          <input type="file" onChange={handleImageChange} />
+        </form>
+        <p className="userName">
+          {userData.firstName} {userData.lastName}
+        </p>
+        <p>
+          Email: <span>{userData.email}</span>
+        </p>
+        <p>
+          Age: <span>{userData.age}</span>
+        </p>
+        <p>
+          Gender: <span>{userData.gender}</span>
+        </p>
+        <p>
+          Password: <span>{userData.password}</span>
+        </p>
       </div>
       <div className="profileButtons">
-      <button className="LogOutBtn" onClick={handleLogOut}>Log Out</button>
-      <button className="DeleteBtn" onClick={handleDeleteAccount}>Delete</button>
+        <button className="LogOutBtn" onClick={handleLogOut}>
+          Log Out
+        </button>
+        <button className="DeleteBtn" onClick={handleDeleteAccount}>
+          Delete
+        </button>
       </div>
     </div>
   );
