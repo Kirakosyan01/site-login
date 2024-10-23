@@ -1,0 +1,76 @@
+.LoginContainer{
+    background-color: #F0F2F5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LoginPage{
+    column-gap: 50px;
+    row-gap: 50px;
+    padding: 30px;
+    border: 1px solid #000;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    flex-wrap: wrap-reverse;
+}
+.AnimationWrapper{
+ max-width: 600px;
+}
+.LoginFrom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    input{
+        border: none;
+        background-color: #F0F2F5;
+        border-radius: 2px;
+        font-size: 14px;
+        padding: 10px 15px;
+        width: 320px;
+    }
+    button{
+        font-size: 17px;
+        background-color: #5EA8F9;
+        border: 1px solid #505050;
+        border-radius: 2px;
+        font-weight: 600;
+        width: 100%;
+        margin-top: 10px;
+        cursor: pointer;
+        padding: 5px 15px;
+        transition: all 0.2s ease-in-out;
+        &:hover{
+            background-color: #79b3f1;
+        }
+    }
+}
+.RegisterLinkBtn{
+    background-color: transparent;
+    border: none;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    span{
+        color: #0062ca;
+    }
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.LogIn{
+    color: #142A52;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 500;
+}
+.AccountNotFound{
+    max-width: 320px;
+    color: red;
+}

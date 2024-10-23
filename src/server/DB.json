@@ -1,3 +1,15 @@
 {
-    "userData": []
+  "userData": [
+    {
+      "id": "1729687034530",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "asd",
+      "age": "asd",
+      "gender": "asd",
+      "password": "asd",
+      "image": "",
+      "isAuth": true
+    }
+  ]
 }

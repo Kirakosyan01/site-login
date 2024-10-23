@@ -1,0 +1,41 @@
+.userName{
+    font-size: 21px;
+    font-weight: 500;
+}
+.ProfileContainer{
+    position: relative;
+}
+.LogOutBtn{
+    background-color: #6b61c7;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+        background-color: #766ec4;
+    }
+}
+.profileButtons{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    top: 5%;
+    right: 1%;
+    position: absolute;
+}
+.DeleteBtn{
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(240, 59, 59);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+        background-color: #f85252;
+    }
+}
